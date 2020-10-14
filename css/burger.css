@@ -1,0 +1,125 @@
+.wrapper {
+  transition: 0.5s;
+}
+/* настройка бургер кнопки*/
+@media screen and (min-device-width: 992px) {
+  .burger-btn {
+    display: none;
+  }
+}
+@media screen and (max-device-width: 991px) {
+
+  .navbar ul li {
+    display: none;
+  }
+  .navbar img {
+    max-width: 50%;
+  }
+}
+@media screen and (max-device-height: 650px) {
+
+}
+
+
+.menu-burger {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: relative;
+}
+.menu-burger span,
+.menu-burger span::before,
+.menu-burger span::after {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  top: 60%;
+  margin-top: -1px;
+  left: 50%;
+  margin-left: -10px;
+  background-color: #b8cf69;
+}
+.menu-burger span::before,
+.menu-burger span::after {
+  content: "";
+  display: block;
+  transition: 0.3s;
+}
+.menu-burger span::before{
+  transform: translateY(-5px);
+}
+.menu-burger span::after{
+  transform: translateY(5px);
+}
+.menu-burger_active span::before {
+  transform: rotate(45deg);
+}
+.menu-burger_active span::after {
+  transform: rotate(-45deg);
+}
+.menu-burger_active span {
+  height: 0;
+}
+
+/* настройка меню бургер */
+.menu-mobile {
+  position: fixed;
+  right: 0;
+  top: 0;
+  border-left: 1px solid #fff;
+  width: 70%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #339966;
+  transition: 0.5s;
+  transform: translateX(100%);
+  z-index: 2;
+}
+.menu-mobile_active{
+  transform: translateX(0%);
+}
+.menu-mobile_list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  height: 70%;
+  width: 100%;
+}
+.menu-mobile_list a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.8em;
+  text-transform: uppercase;
+}
+.burger-btn {
+  position: absolute;
+  left: -50px;
+  top: 0;
+}
+#burgercall {
+  border: 2px solid #fff;
+  padding: 8px;
+}
+.menu_social {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+.social i {
+  font-size: 2em;
+  margin: auto;
+  color: #003333;
+}
+.menu_social i:hover {
+  color: #fff;
+}
+
+/* перемещение контента */
+.list_active {
+  transform: translateX(-60%);
+}
